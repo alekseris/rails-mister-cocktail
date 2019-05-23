@@ -10,6 +10,10 @@
     </div>
   <% end %>
 
-  <%= f.input :name %>
-  <%= f.submit %>
+  <div class="form-inline text-left">
+    <%= f.input :name, class:"form-control text-left"%>
+  </div>
+  <div class="action">
+    <%= f.submit class:"btn btn-primary"%>
+  </div>
 <% end %>
