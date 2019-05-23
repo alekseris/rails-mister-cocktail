@@ -1,4 +1,19 @@
-<% @cocktails.each do |cocktail| %>
- <h1>   <%= link_to cocktail.name, cocktail_path(cocktail) %></h1>
-    <% end %>
+<div class="container-grid-2">
+  <div class="row">
+    <div class="col-12 card-grid m-3">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+            <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-default"  %>
 
+            </h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <%= link_to "+", cocktail_path(cocktail), class: "btn btn-default"  %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,2 +1,18 @@
-<h1><%= @cocktail.name %></h1>
-
+<div class="container">
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= @cocktail.name %></h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Ingredient 1</li>
+      <li class="list-group-item">Ingredient 2</li>
+      <li class="list-group-item">Ingredient 3</li>
+    </ul>
+    <div class="card-body">
+      <%= link_to "add ingredient", new_cocktail_dose_path(@cocktail.id),  class:"card-link"%>
+      <a href="#" class="card-link">delete ingredient</a>
+    </div>
+  </div>
+</div>
