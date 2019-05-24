@@ -1,9 +1,16 @@
 <div class="container-grid-2">
   <div class="row">
     <div class="col-12 card-grid m-3">
+      <%= cl_image_tag("fc236kq8hvc4svs0ymul",
+      width: 400, height: 300, crop: :fill) %>
+
+<!-- for face detection -->
+<%= cl_image_tag("sq8pjak2t7y8kyqhfix7",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
       <% @cocktails.each do |cocktail| %>
         <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
+          <%= cl_image_tag cocktail.photo, height: 30, width: 40, crop: :fill, class:"card-img-top" %>
+
           <div class="card-body">
             <h5 class="card-title">
             <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-default"  %>

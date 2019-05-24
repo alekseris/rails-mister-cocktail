@@ -12,6 +12,8 @@
 
   <div class="form-inline text-left">
     <%= f.input :name, class:"form-control text-left"%>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
   </div>
   <div class="action">
     <%= f.submit class:"btn btn-primary"%>

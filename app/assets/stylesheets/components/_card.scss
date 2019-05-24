@@ -7,6 +7,22 @@
 
 .card-grid-3 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 3fr 2fr 1fr;
   grid-gap: 8px;
+}
+
+.grid-right{
+text-align: right;
+
+}
+
+.card-title-cocktail{
+  font-weight: bold;
+}
+
+.card-cocktail-header{
+  h5{
+  font-weight: bold;
+
+  }
 }
