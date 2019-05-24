@@ -22,24 +22,26 @@
             </div>
 
       </div>
-      <ul class="list-group list-group-flush">
-        <% @cocktail.doses.each do |dose| %>
-          <li class="list-group-item">
-            <div class="card-grid-3">
-              <div>
-                <%= dose.ingredient.name%>
+      <div>
+        <ul class="list-group list-group-flush">
+          <% @cocktail.doses.each do |dose| %>
+            <li class="list-group-item">
+              <div class="card-grid-3">
+                <div>
+                  <%= dose.ingredient.name%>
+                </div>
+                <div class="grid-right">
+                  <%= dose.description%>
+                </div>
+                <div class="grid-right">
+                  <%= link_to dose_path(dose), method: :delete, data: { confirm: 'Are you sure?'},  class:"card-link" do%>
+                  <i class="fas fa-trash-alt"></i>
+                  <% end %>
+                </div>
               </div>
-              <div class="grid-right">
-                <%= dose.description%>
-              </div>
-              <div class="grid-right">
-                <%= link_to dose_path(dose), method: :delete, data: { confirm: 'Are you sure?'},  class:"card-link" do%>
-                <i class="fas fa-trash-alt"></i>
-                <% end %>
-              </div>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+            </li>
+          <% end %>
+        </ul>
+      </div>
   </div>
 </div>

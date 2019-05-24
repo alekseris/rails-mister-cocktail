@@ -1,10 +1,15 @@
 .container-grid-2{
+  margin-top: 64px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   // grid-gap: 16px;
 
 }
 
-.container-banner{
+.container-main{
   margin-right: 10px;
+}
+
+.body-cocktails{
+  background-color: $backcolor;
 }

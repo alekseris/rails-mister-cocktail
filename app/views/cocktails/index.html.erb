@@ -1,24 +1,51 @@
-<div class="container-grid-2">
+<div class="container-main">
   <div class="row">
     <div class="col-12 card-grid m-3">
-      <%= cl_image_tag("fc236kq8hvc4svs0ymul",
-      width: 400, height: 300, crop: :fill) %>
-
-<!-- for face detection -->
-<%= cl_image_tag("sq8pjak2t7y8kyqhfix7",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
       <% @cocktails.each do |cocktail| %>
         <div class="card" style="width: 18rem;">
-          <%= cl_image_tag cocktail.photo, height: 30, width: 40, crop: :fill, class:"card-img-top" %>
-
+          <%= cl_image_tag cocktail.photo, height: 30, width: 40, crop: :fill, class:"card-img-top " %>
           <div class="card-body">
-            <h5 class="card-title">
-            <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-default"  %>
+            <h4 class="card-title-cocktail">
+            <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-cocktail"  %>
+            </h4>
+            <div class="card-grid-3">
+              <div class="card-cocktail-header">
+                <h5>Ingredient</h5>
+              </div>
+              <div class="grid-right card-cocktail-header">
+                <h5>Amount</h5>
+              </div>
+              <div class="grid-right">
+                <%= link_to new_cocktail_dose_path(cocktail),  class:"card-link" do%>
+                <i class="fas fa-plus-circle"></i>
+                <% end %>
+              </div>
+            </div>
+            <div>
+              <ul class="list-group list-group-flush">
+                <% cocktail.doses.each do |dose| %>
+                  <li class="list-group-item">
+                    <div class="card-grid-3">
+                      <div>
+                        <%= dose.ingredient.name%>
+                      </div>
+                      <div class="grid-right">
+                        <%= dose.description%>
+                      </div>
+                      <div class="grid-right">
+                        <%= link_to dose_path(dose), method: :delete, data: { confirm: 'Are you sure?'},  class:"card-link" do%>
+                        <i class="fas fa-trash-alt"></i>
+                        <% end %>
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
 
-            </h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <%= link_to "+", cocktail_path(cocktail), class: "btn btn-default"  %>
+
           </div>
+
         </div>
       <% end %>
     </div>
