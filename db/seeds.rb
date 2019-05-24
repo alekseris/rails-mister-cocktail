@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 require 'json'
-
+Dose.destroy_all
+Cocktail.destroy_all
 Ingredient.destroy_all
 puts 'creating ingredients...'
 def create_ingridients
